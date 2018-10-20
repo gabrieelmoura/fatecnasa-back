@@ -10,6 +10,7 @@ class LocalController extends Controller
     public function read()
     {
         $query = Local::query();
+        $query->with(['periodos', 'tipoDesastre', 'comentarios']);
         return $query->get();
     }
 
